@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Linkify - URL Shortener",
+    "description": "Linkify is a website that allows you to shorten your links for free without an account.",
+    "href": "https://linkify.nohaxito.xyz/",
+    "repository": "https://github.com/nohaxito/linkify",
+    "techs": ["Next.js", "TailwindCSS", "Typescript", "Prisma", "MySQL"],
+    "img": "https://cdn.discordapp.com/attachments/825185826828189722/1225927881390030929/image.png?ex=6622e94f&is=6610744f&hm=586a82229e5b667ddfc0abedbc59370aef62d41123010e3454c6d12b78096bea&"
+  },
+  {
+    "name": "Deluxe UI - Design System (Currently Reworking)",
+    "description": "A design system for all my web projects using Radix UI and Tailwind CSS. It's based on shadcn-ui.",
+    "href": "https://ui.nohaxito.xyz/",
+    "repository": "https://github.com/nohaxito/ui-library",
+    "techs": ["Next.js", "TailwindCSS", "Typescript", "MDX", "Radix UI"],
+    "img": "https://cdn.discordapp.com/attachments/825185826828189722/1225927881390030929/image.png?ex=6622e94f&is=6610744f&hm=586a82229e5b667ddfc0abedbc59370aef62d41123010e3454c6d12b78096bea&"
+  }
+]
