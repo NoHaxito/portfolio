@@ -16,6 +16,7 @@
     "@astrojs/vercel": "^7.5.2",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
+    "@vercel/analytics": "^1.2.2",
     "astro": "^4.5.16",
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.1",

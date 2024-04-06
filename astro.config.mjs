@@ -11,10 +11,7 @@ export default defineConfig({
   redirects: {
     "/[page]": "/",
   },
-  adapter: vercel(),
-  build: {
-    rollupOptions: {
-      external: ["lodash.chunk"],
-    },
-  },
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
 });
