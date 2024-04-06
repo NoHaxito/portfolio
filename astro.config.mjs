@@ -9,7 +9,12 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: "server",
   redirects: {
-    "/[page]": "/"
+    "/[page]": "/",
   },
-  adapter: vercel()
+  adapter: vercel(),
+  build: {
+    rollupOptions: {
+      external: ["lodash.chunk"],
+    },
+  },
 });
