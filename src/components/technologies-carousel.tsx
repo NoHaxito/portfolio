@@ -1,4 +1,4 @@
-import chunk from "lodash.chunk";
+import { chunk } from "../lib/utils";
 import {
   Carousel,
   CarouselContent,
@@ -52,7 +52,11 @@ export function TechnologiesCarousel() {
               {technologies.map((technology) => {
                 const { icon: Icon } = technology;
                 return (
-                  <div className="flex items-center flex-col gap-y-1" key={technology.name} title={technology.name}>
+                  <div
+                    className="flex items-center flex-col gap-y-1"
+                    key={technology.name}
+                    title={technology.name}
+                  >
                     <Icon className="size-12" />
                     <span className="text-neutral-400">{technology.name}</span>
                   </div>
