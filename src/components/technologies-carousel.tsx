@@ -19,7 +19,6 @@ import {
   Mongodb,
   Mysql,
 } from "./icons";
-import { Icons } from "./icons";
 import { useMemo } from "react";
 
 export function TechnologiesCarousel() {
@@ -49,12 +48,13 @@ export function TechnologiesCarousel() {
       <CarouselContent className="h-full p-2">
         {technologies.map((technologies, i) => (
           <CarouselItem className="h-full" key={i}>
-            <div className="grid h-full min-h-full grid-cols-4 place-items-center">
+            <div className="grid h-full min-h-full  grid-cols-4 place-items-center">
               {technologies.map((technology) => {
                 const { icon: Icon } = technology;
                 return (
-                  <div key={technology.name} title={technology.name}>
+                  <div className="flex items-center flex-col gap-y-1" key={technology.name} title={technology.name}>
                     <Icon className="size-12" />
+                    <span className="text-neutral-400">{technology.name}</span>
                   </div>
                 );
               })}

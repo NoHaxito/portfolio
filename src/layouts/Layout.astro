@@ -12,9 +12,34 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://cdn.discordapp.com/avatars/405799482492583936/f7c53710b2f12372efd68c36e3bd2c2e.png?size=4096"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Frontend Developer, I enjoy building user interfaces."
+    />
+    <meta
+      name="og:image"
+      content="https://cdn.discordapp.com/avatars/405799482492583936/f7c53710b2f12372efd68c36e3bd2c2e.png?size=4096"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nohaxit0" />
+    <meta name="twitter:creator" content="@nohaxit0" />
+    <meta name="twitter:title" content={title} />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer, I enjoy building user interfaces."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.discordapp.com/avatars/405799482492583936/f7c53710b2f12372efd68c36e3bd2c2e.png?size=4096"
+    />
   </head>
   <body>
     <slot />

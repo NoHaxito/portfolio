@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -206,13 +204,18 @@ const CarouselDots = React.forwardRef<
     <div className="flex items-center gap-1 justify-center">
       {api?.slideNodes().map((_, i) => (
         <button
+          ref={ref}
           key={i}
           aria-current={slideActive === i}
           aria-label={`Slide ${i + 1}`}
           disabled={slideActive === i}
           onClick={() => api?.scrollTo(i)}
           data-state={slideActive === i ? "active" : undefined}
-          className="size-2 rounded-full data-[state=active]:bg-white bg-neutral-600 transition-all duration-500 ease-in-out data-[state=active]:w-5 hover:bg-neutral-500 data-[active]:hover:bg-white"
+          className={cn(
+            className,
+            "size-2 rounded-full data-[state=active]:bg-white bg-neutral-600 transition-all duration-500 ease-in-out data-[state=active]:w-5 hover:bg-neutral-500 data-[active]:hover:bg-white"
+          )}
+          {...props}
         ></button>
       ))}
     </div>
@@ -220,40 +223,10 @@ const CarouselDots = React.forwardRef<
 });
 CarouselDots.displayName = "CarouselDots";
 
-//  const CarouselNext = React.forwardRef<
-//   HTMLButtonElement,
-//   React.ComponentProps<typeof Button>
-// >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-//   const { orientation, scrollNext, canScrollNext } = useCarousel();
-
-//   return (
-//     <Button
-//       ref={ref}
-//       variant={variant}
-//       size={size}
-//       className={cn(
-//         "absolute h-8 w-8 rounded-full",
-//         orientation === "horizontal"
-//           ? "-right-12 top-1/2 -translate-y-1/2"
-//           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-//         className
-//       )}
-//       disabled={!canScrollNext}
-//       onClick={scrollNext}
-//       {...props}
-//     >
-//       <ArrowRight className="h-4 w-4" />
-//       <span className="sr-only">Next slide</span>
-//     </Button>
-//   );
-// });
-// CarouselNext.displayName = "CarouselNext";
-
 export {
   type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselDots,
-  //   CarouselNext,
 };
