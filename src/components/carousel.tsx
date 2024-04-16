@@ -52,14 +52,14 @@ const Carousel = React.forwardRef<
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
-      plugins
+      plugins,
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
@@ -91,7 +91,7 @@ const Carousel = React.forwardRef<
           scrollNext();
         }
       },
-      [scrollPrev, scrollNext]
+      [scrollPrev, scrollNext],
     );
 
     React.useEffect(() => {
@@ -142,7 +142,7 @@ const Carousel = React.forwardRef<
         </div>
       </CarouselContext.Provider>
     );
-  }
+  },
 );
 Carousel.displayName = "Carousel";
 
@@ -153,13 +153,13 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden h-full">
+    <div ref={carouselRef} className="h-full overflow-hidden">
       <div
         ref={ref}
         className={cn(
           "flex",
           orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          className
+          className,
         )}
         {...props}
       />
@@ -182,7 +182,7 @@ const CarouselItem = React.forwardRef<
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
         orientation === "horizontal" ? "pl-4" : "pt-4",
-        className
+        className,
       )}
       {...props}
     />
@@ -201,23 +201,25 @@ const CarouselDots = React.forwardRef<
     api?.on("select", () => setSlideActive(api?.selectedScrollSnap()));
   });
   return (
-    <div className="flex items-center gap-1 justify-center">
-      {api?.slideNodes().map((_, i) => (
-        <button
-          ref={ref}
-          key={i}
-          aria-current={slideActive === i}
-          aria-label={`Slide ${i + 1}`}
-          disabled={slideActive === i}
-          onClick={() => api?.scrollTo(i)}
-          data-state={slideActive === i ? "active" : undefined}
-          className={cn(
-            className,
-            "size-2 rounded-full data-[state=active]:bg-white bg-neutral-600 transition-all duration-500 ease-in-out data-[state=active]:w-5 hover:bg-neutral-500 data-[active]:hover:bg-white"
-          )}
-          {...props}
-        ></button>
-      ))}
+    <div className="flex items-center justify-center gap-1">
+      {api
+        ?.slideNodes()
+        .map((_, i) => (
+          <button
+            ref={ref}
+            key={i}
+            aria-current={slideActive === i}
+            aria-label={`Slide ${i + 1}`}
+            disabled={slideActive === i}
+            onClick={() => api?.scrollTo(i)}
+            data-state={slideActive === i ? "active" : undefined}
+            className={cn(
+              className,
+              "size-2 rounded-full bg-neutral-600 transition-all duration-500 ease-in-out hover:bg-neutral-500 data-[state=active]:w-5 data-[state=active]:bg-white data-[active]:hover:bg-white",
+            )}
+            {...props}
+          ></button>
+        ))}
     </div>
   );
 });

@@ -39,9 +39,9 @@ export function TechnologiesCarousel() {
           { name: "Mongodb", icon: Mongodb },
           { name: "Mysql", icon: Mysql },
         ],
-        8
+        8,
       ),
-    []
+    [],
   );
   return (
     <Carousel className="h-full p-2">
@@ -53,7 +53,7 @@ export function TechnologiesCarousel() {
                 const { icon: Icon } = technology;
                 return (
                   <div
-                    className="flex items-center flex-col gap-y-1"
+                    className="flex flex-col items-center gap-y-1"
                     key={technology.name}
                     title={technology.name}
                   >
