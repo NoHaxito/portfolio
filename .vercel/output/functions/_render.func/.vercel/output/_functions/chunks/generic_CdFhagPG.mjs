@@ -1,5 +1,5 @@
-export { renderers } from "../renderers.mjs";
+export { renderers } from '../renderers.mjs';
 
-const page = () => import("./pages/generic_JPfPv6sZ.mjs");
+const page = () => import('./pages/generic_JPfPv6sZ.mjs');
 
 export { page };
