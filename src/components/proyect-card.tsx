@@ -2,10 +2,10 @@ import { Github } from "./icons";
 
 interface Props {
   name: string;
-  href: string;
+  href: string | null;
   description: string;
   img: string;
-  repository: string;
+  repository: string | null;
   techs: string[];
 }
 
