@@ -1,11 +1,11 @@
 [
   {
-    "name": "Upload to Cloudflare R2",
-    "description": "A desktop application that allows you to upload files to Cloudflare R2 cloud storage using your own credentials.",
-    "href": null,
-    "repository": "https://github.com/nohaxito/upload-to-r2",
-    "techs": ["React", "TailwindCSS", "Typescript", "Tauri"],
-    "img": "https://cdn.discordapp.com/attachments/825185826828189722/1225927881390030929/image.png?ex=6622e94f&is=6610744f&hm=586a82229e5b667ddfc0abedbc59370aef62d41123010e3454c6d12b78096bea&"
+    "name": "Deploys.top",
+    "description": "Website to search & compare free and paid hosting providers.",
+    "href": "https://deploys-top.vercel.app",
+    "repository": "https://github.com/nohaxito/deploys-top",
+    "techs": ["Next.js", "TailwindCSS", "Typescript", "Sanity"],
+    "img": "https://cdn.nohaxito.xyz/deploys-top-preview.png"
   },
   {
     "name": "Linkify - URL Shortener",
